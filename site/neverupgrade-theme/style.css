@@ -1,0 +1,128 @@
+/*
+Theme Name: NeverUpgrade
+Theme URI: https://neverupgrade.com
+Author: NeverUpgrade
+Description: Keeping unsupported software alive, safely. A fast, readable block theme with a subtle retro-terminal accent.
+Version: 1.2.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: neverupgrade
+*/
+
+/* ---- retro accents on top of theme.json ---- */
+
+.site-brand a {
+  text-decoration: none;
+}
+
+.site-brand .wp-block-site-title a::after {
+  content: "_";
+  color: var(--wp--preset--color--amber);
+  animation: nu-blink 1.2s steps(1) infinite;
+}
+
+@keyframes nu-blink {
+  50% { opacity: 0; }
+}
+
+/* kicker/meta labels */
+.nu-kicker,
+.wp-block-post-terms,
+.wp-block-post-date {
+  font-family: var(--wp--preset--font-family--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wp-block-post-terms a {
+  color: var(--wp--preset--color--amber-deep);
+  text-decoration: none;
+}
+
+/* WCAG AA: green-600 fails 4.5:1 on the paper background; darken kicker text */
+.nu-kicker.has-text-color[style*="--green"] {
+  color: #15803d !important;
+}
+
+/* post list cards */
+.nu-card {
+  background: var(--wp--preset--color--card);
+  border: 1px solid var(--wp--preset--color--border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease;
+}
+
+.nu-card:hover {
+  border-color: var(--wp--preset--color--amber);
+}
+
+.nu-card .wp-block-post-title a {
+  text-decoration: none;
+  color: var(--wp--preset--color--contrast);
+}
+
+.nu-card .wp-block-post-title a:hover {
+  color: var(--wp--preset--color--amber);
+}
+
+/* article body niceties (pipeline articles are heading/list/code heavy) */
+.wp-block-post-content h2 {
+  border-bottom: 2px solid var(--wp--preset--color--border);
+  padding-bottom: 0.35em;
+}
+
+.wp-block-post-content code {
+  background: var(--wp--preset--color--codebg);
+  color: var(--wp--preset--color--green);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.wp-block-post-content pre {
+  background: var(--wp--preset--color--codebg);
+  color: #e7e5e4;
+  border-radius: 10px;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+.wp-block-post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.wp-block-post-content img {
+  border-radius: 10px;
+  border: 1px solid var(--wp--preset--color--border);
+}
+
+.wp-block-post-content blockquote {
+  border-left: 4px solid var(--wp--preset--color--amber);
+  padding-left: 1.25rem;
+  font-style: normal;
+  color: var(--wp--preset--color--muted);
+}
+
+.wp-block-post-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.wp-block-post-content th,
+.wp-block-post-content td {
+  border: 1px solid var(--wp--preset--color--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.wp-block-post-content th {
+  background: var(--wp--preset--color--codebg);
+  color: var(--wp--preset--color--base);
+  font-family: var(--wp--preset--font-family--mono);
+  font-size: 0.85rem;
+}

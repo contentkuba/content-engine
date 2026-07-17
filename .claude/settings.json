@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/python:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(sed:*)",
+      "Edit(work/**)",
+      "WebFetch",
+      "WebSearch",
+      "mcp__dfs-mcp"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(./.env)",
+      "Read(secrets/**)",
+      "Read(./secrets/**)"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+# Copy to clients/<client>.yaml. No secrets here — only env var NAMES.
+name: acme                    # short slug, used for work/ dirs and env prefixes
+active: true                  # run-pipeline skips inactive clients
+domain: acme.com              # without https:// or www.
+market:
+  location_name: United States   # DataForSEO location (country-level)
+  language_code: en
+business:
+  what: "B2B invoicing SaaS for freelancers"   # one line — drives keyword relevance scoring
+  audience: "freelancers and small agencies"
+  goals: "signups for the free tier"
+  competitors:                # domains, used for gap analysis
+    - competitor1.com
+    - competitor2.com
+  seed_topics:                # 3-8 topics Agent 1 expands from
+    - invoicing
+    - freelance taxes
+    - getting paid on time
+sheet:
+  spreadsheet_id: ""          # Google Sheet ID (from its URL); Agent 1 creates it if empty
+calendar:
+  articles_per_week: 5        # Mon-Fri by default
+  start_date: ""              # blank = next Monday
+voice: |
+  # Optional per-client voice notes; overrides/extends the default in write-article skill.
+  # Tone, POV, banned phrases, CTA style, target reading level, etc.
+infographics:
+  per_article: 2              # 0 disables Agent 3 for this client
+  brand:
+    primary: "#1a56db"
+    accent: "#f59e0b"
+    dark: "#111827"
+    light: "#f9fafb"
+    font: "Inter"             # must be locally installed or a websafe fallback is used
+internal_linking:
+  enabled: true               # Agent 5 edits LIVE posts on the client site — disable per client if needed
+  max_inbound: 3              # max existing articles edited to link to each new article
+publishing:
+  cms: wordpress              # wordpress | wix
+  mode: draft                 # draft | live
+  wordpress:
+    base_url: https://acme.com
+    user_env: ACME_WP_USER
+    app_password_env: ACME_WP_APP_PASSWORD
+    category: Blog            # created if missing
+  wix:
+    api_key_env: BLOOM_WIX_API_KEY
+    site_id_env: BLOOM_WIX_SITE_ID
+    member_id: ""             # author member id (required by Wix Blog API)

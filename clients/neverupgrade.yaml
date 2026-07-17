@@ -1,0 +1,57 @@
+name: neverupgrade
+active: true
+domain: neverupgrade.com
+market:
+  location_name: United States
+  language_code: en
+business:
+  what: "Guides and troubleshooting for keeping end-of-life software, operating systems, and hardware running safely — for people who refuse to upgrade what still works"
+  audience: "small-business owners, reluctant in-house IT admins, and technically-minded holdouts running Windows 10/Server 2012, QuickBooks Desktop, legacy NAS boxes, and other unsupported systems"
+  goals: "organic traffic and email subscribers; affiliate/sponsor revenue later"
+  competitors:
+    - askwoody.com
+    - endoflife.date
+    - borncity.com
+  seed_topics:
+    - windows 10 after end of support
+    - windows server 2012 end of life
+    - quickbooks desktop without subscription
+    - keep old software running on new windows
+    - legacy NAS end of life
+    - run 32-bit programs on modern windows
+sheet:
+  spreadsheet_id: "17hmyUVw4x1C4VG32SUL0ZbhnGmHPGIzWyGvgHS-d9TY"
+calendar:
+  articles_per_week: 5
+  start_date: ""
+voice: |
+  Persona: a veteran sysadmin who thinks the upgrade treadmill is mostly a racket, and says so.
+  Tone: dry, confident, a little contrarian — but never reckless. Always name the real risk of
+  staying on unsupported software (security exposure, data loss) and give the honest mitigation,
+  including "this is the one case where you actually should upgrade" when true.
+  Style: second person, short declarative sentences, exact version numbers and error codes in
+  headings, numbered steps for every fix, a "before you start: back up" note in every how-to.
+  Never: fearmongering, vendor press-release framing, "in today's fast-paced world" filler.
+infographics:
+  per_article: 2
+  brand:
+    primary: "#d97706"        # CRT amber
+    accent: "#16a34a"         # terminal green
+    dark: "#1c1917"
+    light: "#fafaf9"
+    font: "IBM Plex Sans"
+publishing:
+  cms: wordpress              # switch to wix if you set the site up on Wix
+  mode: draft                 # keep draft for the whole first week; review before going live
+  wordpress:
+    base_url: https://neverupgrade.com
+    user_env: NEVERUPGRADE_WP_USER
+    app_password_env: NEVERUPGRADE_WP_APP_PASSWORD
+    category: Guides
+  wix:
+    api_key_env: NEVERUPGRADE_WIX_API_KEY
+    site_id_env: NEVERUPGRADE_WIX_SITE_ID
+    member_id: ""
+internal_linking:
+  enabled: true
+  max_inbound: 3

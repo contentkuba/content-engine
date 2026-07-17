@@ -1,0 +1,6 @@
+.env
+secrets/
+.venv/
+work/
+__pycache__/
+site/*.zip

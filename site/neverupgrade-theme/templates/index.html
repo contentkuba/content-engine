@@ -1,0 +1,54 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"3rem"}}},"layout":{"type":"constrained","contentSize":"1080px"}} -->
+<main class="wp-block-group" style="padding-top:3rem">
+
+	<!-- wp:group {"style":{"spacing":{"margin":{"bottom":"3rem"}}},"layout":{"type":"constrained","contentSize":"720px","justifyContent":"left"}} -->
+	<div class="wp-block-group" style="margin-bottom:3rem">
+		<!-- wp:paragraph {"className":"nu-kicker","style":{"color":{"text":"var:preset|color|green"}}} -->
+		<p class="nu-kicker has-text-color" style="color:var(--wp--preset--color--green)">$ status: still running</p>
+		<!-- /wp:paragraph -->
+		<!-- wp:heading {"level":1} -->
+		<h1 class="wp-block-heading">Keeping unsupported software alive, safely.</h1>
+		<!-- /wp:heading -->
+		<!-- wp:paragraph {"style":{"color":{"text":"var:preset|color|muted"}},"fontSize":"large"} -->
+		<p class="has-text-color has-large-font-size" style="color:var(--wp--preset--color--muted)">Field guides for Windows 10 holdouts, QuickBooks Desktop diehards, and everyone whose "obsolete" systems still do the job. The real risks, the honest fixes, and zero upgrade-treadmill sales pitch.</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:query {"queryId":1,"query":{"perPage":10,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template {"layout":{"type":"grid","minimumColumnWidth":"22rem"}} -->
+			<!-- wp:group {"className":"nu-card","style":{"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem","left":"1.5rem","right":"1.5rem"}}},"layout":{"type":"constrained"}} -->
+			<div class="wp-block-group nu-card" style="padding-top:1.5rem;padding-right:1.5rem;padding-bottom:1.5rem;padding-left:1.5rem">
+				<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
+				<div class="wp-block-group">
+					<!-- wp:post-terms {"term":"category"} /-->
+					<!-- wp:post-date {"style":{"color":{"text":"var:preset|color|muted"}}} /-->
+				</div>
+				<!-- /wp:group -->
+				<!-- wp:post-title {"isLink":true,"level":2,"fontSize":"large"} /-->
+				<!-- wp:post-excerpt {"moreText":"read →","excerptLength":28,"style":{"color":{"text":"var:preset|color|muted"}}} /-->
+			</div>
+			<!-- /wp:group -->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"2.5rem"}}}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+		<!-- wp:query-no-results -->
+			<!-- wp:paragraph -->
+			<p>Nothing here yet. The first guides are compiling…</p>
+			<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+	</div>
+	<!-- /wp:query -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

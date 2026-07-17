@@ -1,0 +1,6 @@
+gspread>=6.0
+google-auth>=2.0
+requests>=2.31
+PyYAML>=6.0
+markdown>=3.5
+beautifulsoup4>=4.12

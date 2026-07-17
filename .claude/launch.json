@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wp-theme-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "@wp-now/wp-now", "start", "--path", "site/neverupgrade-theme", "--port", "8881", "--skip-browser"],
+      "port": 8881
+    }
+  ]
+}

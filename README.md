@@ -51,7 +51,7 @@ Manual: `claude "/run-pipeline"` from this directory.
 Scheduled (macOS cron, 7am daily):
 ```
 crontab -e
-0 7 * * * cd /Users/kuba/content-engine && /usr/local/bin/claude -p "/run-pipeline" --permission-mode acceptEdits >> work/cron.log 2>&1
+0 7 * * * cd /Users/your-name/content-engine && /usr/local/bin/claude -p "/run-pipeline" --permission-mode acceptEdits >> work/cron.log 2>&1
 ```
 Note: headless runs need the MCP servers configured at user scope (`claude mcp list` to verify dfs-mcp is available outside this app session) and pre-approved tool permissions — see `.claude/settings.json`.
 

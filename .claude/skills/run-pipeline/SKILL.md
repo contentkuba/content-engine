@@ -18,6 +18,7 @@ description: "Daily orchestrator — for every active client run write-article, 
 
    **Backlog drain pass:** after the main sequence, check the Calendar: if any rows remain at `written` or `designed`, run the corresponding stages (infographics/publish/internal-links) one more round — at most one extra pass per day — so the backlog shrinks by one daily instead of holding steady.
 3. A failure for one client never blocks the others — record it and continue.
-4. Finish with a summary table: client | article title | final status | URL or error. If any client's calendar has < 5 `planned` rows left, flag that `/seo-audit` needs a refresh run.
+4. Finish with a summary table: client | article title | final status | URL or error.
+5. **Auto-refresh:** if any client's calendar has < 5 `planned` rows left, run `/seo-audit clients/<client>.yaml` for that client now, at the end of the run — do not just flag it. (Keep it lean: skip the technical spot-check and LLM-response sampling on auto-refreshes; keyword expansion + calendar extension + a short report are enough. A full audit still runs monthly or on demand.) Note the refresh in the summary.
 
 Run stages for one client sequentially; different clients may be processed one after another (context is cheaper than debugging interleaved sheet writes).

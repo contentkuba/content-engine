@@ -42,7 +42,7 @@ infographics:
     font: "IBM Plex Sans"
 publishing:
   cms: wordpress              # switch to wix if you set the site up on Wix
-  mode: draft                 # keep draft for the whole first week; review before going live
+  mode: live
   wordpress:
     base_url: https://neverupgrade.com
     user_env: NEVERUPGRADE_WP_USER

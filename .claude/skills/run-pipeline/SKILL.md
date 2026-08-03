@@ -5,7 +5,11 @@ description: "Daily orchestrator — for every active client run write-article, 
 
 # Daily Pipeline
 
-**Concurrency & identity:** `scripts/run_daily.sh` takes an exclusive `flock` on `work/.pipeline.lock` before launching you and exports `CONTENT_ENGINE_SCHEDULED_RUN`. If that variable is set in your environment (`echo $CONTENT_ENGINE_SCHEDULED_RUN`), you ARE the scheduled pipeline and you hold the lock — proceed. Do NOT stand down because other claude processes appear in `ps`; a previous run misidentified itself that way and silently skipped a day. The lock, not process-table inference, is the arbiter.
+**Concurrency & identity — decision table, not judgment call.** Two scheduled runs have now been lost to self-misidentification (2026-07-17: the agent thought it was a leftover interactive session; 2026-08-03: it saw its own process in `ps` and stood down deferring to itself). Therefore:
+
+1. If your invocation includes `scheduled=<token>` (the wrapper passes it in the prompt), you ARE the scheduled run and `run_daily.sh` already holds the exclusive `flock` for you. **Proceed unconditionally.** Never inspect `ps` for other claude processes; any `claude -p /run-pipeline` you would find there is you.
+2. If invoked without `scheduled=` (a human ran /run-pipeline): try `flock -n work/.pipeline.lock true`. If that fails, a real run is active — report that and stop. If it succeeds, proceed (your own stages don't hold the lock; that's acceptable for supervised manual runs).
+3. Process-table inference is FORBIDDEN as an identity or concurrency signal in both cases. The lock and the prompt token are the only arbiters.
 
 1. List `clients/*.yaml` (skip `_template.yaml` and any with `active: false`).
 2. For each active client, run the three stages **in order**, each stage only if the previous succeeded for that client:

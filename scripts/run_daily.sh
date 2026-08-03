@@ -27,7 +27,7 @@ done
 export CONTENT_ENGINE_SCHEDULED_RUN="$(date '+%Y-%m-%dT%H:%M:%S')-pid$$"
 
 for attempt in 1 2; do
-  $KEEPAWAKE "$CLAUDE_BIN" -p "/run-pipeline" --permission-mode acceptEdits >> "$LOG" 2>&1 && exit 0
+  $KEEPAWAKE "$CLAUDE_BIN" -p "/run-pipeline scheduled=$CONTENT_ENGINE_SCHEDULED_RUN" --permission-mode acceptEdits >> "$LOG" 2>&1 && exit 0
   echo "attempt $attempt failed ($(date '+%H:%M:%S')), retrying in 5 min" >> "$LOG"
   sleep 300
 done

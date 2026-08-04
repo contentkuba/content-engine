@@ -25,6 +25,8 @@ Target: 1,200-1,800 words (informational) or 800-1,200 (commercial), markdown.
 
 Structure: H1 = title (may refine the calendar title; keep primary keyword near the front) → direct-answer opening paragraph (2-3 sentences that would survive as a featured snippet / LLM citation) → H2s per outline (adjust freely based on research) → conclusion with the client's CTA.
 
+**CTA reality rule (all clients):** a CTA may only reference things that verifiably exist. Unless the client yaml explicitly declares a real newsletter, download, tool, or community (with its URL), NONE of those exist — do not invent them, do not link to /newsletter/ or /subscribe/ pages, do not promise "we'll send you" anything. The default CTA is a link to a relevant live article from the Calendar tab, or plain closing advice with no ask. (This rule exists because the writer repeatedly invented a NeverUpgrade newsletter, complete with dead links, across seven articles.)
+
 SEO/LLM mechanics: primary keyword in H1, first 100 words, one H2, and naturally ~3-5×; secondaries each once in a heading or body; add one short FAQ section (3 questions) when informational — it doubles as LLM-quotable material. **Every FAQ question must be an H3 heading** (`### Question?`), never bold text — this is required for FAQ schema and AI extraction. Internal links: link 1-2 previously published articles from the Calendar tab (published_url column) where genuinely relevant.
 
 ### BRAND VOICE / DUST PROMPT
@@ -61,6 +63,7 @@ Then (or as the fallback), re-read the full draft and rewrite every violation:
 - **Kill symmetry**: vary paragraph lengths (1-sentence paragraphs are allowed), vary sentence openings, no parallel-structured H2s throughout ("Understanding X / Exploring Y / Navigating Z").
 - **Add fingerprints of a human author**: one specific opinion or judgment call per major section, at least one concrete number/example per section, occasional colloquial aside.
 - **Cut 10%**: remove every sentence that doesn't inform or persuade.
+- **Kill invented features**: any mention of "our newsletter", "subscribe", "join our", "we'll send you", downloadable checklists, or any site feature not declared in the client yaml — delete on sight. Mechanical check: `grep -inE "newsletter|join our|subscribe to (the|our)" <work_dir>/article.md` must return nothing.
 - Verify facts kept their sources (link them).
 
 Finish with the mechanical punctuation gate (hard requirement, not stylistic):

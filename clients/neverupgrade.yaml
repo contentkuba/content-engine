@@ -7,7 +7,7 @@ market:
 business:
   what: "Guides and troubleshooting for keeping end-of-life software, operating systems, and hardware running safely — for people who refuse to upgrade what still works"
   audience: "small-business owners, reluctant in-house IT admins, and technically-minded holdouts running Windows 10/Server 2012, QuickBooks Desktop, legacy NAS boxes, and other unsupported systems"
-  goals: "organic traffic and email subscribers; affiliate/sponsor revenue later"
+  goals: "organic traffic; affiliate/sponsor revenue later. (No newsletter or email list exists — see voice rules.)"
   competitors:
     - askwoody.com
     - endoflife.date
@@ -32,6 +32,10 @@ voice: |
   Style: second person, short declarative sentences, exact version numbers and error codes in
   headings, numbered steps for every fix, a "before you start: back up" note in every how-to.
   Never: fearmongering, vendor press-release framing, "in today's fast-paced world" filler.
+  HARD RULE: NeverUpgrade has NO newsletter, no email list, no subscribe page, no downloads,
+  no tools, no community. Never invite readers to subscribe to or join anything of ours, and
+  never link to /newsletter/ or /subscribe/ (those pages do not exist). The only permitted
+  CTA is a link to another live NeverUpgrade article, or plain closing advice with no ask.
 infographics:
   per_article: 2
   brand:
